@@ -1,0 +1,440 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Non Gaussian Denoising Diffusion Models<</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./page_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./page_files/scrolling-nav.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+
+
+
+
+    <header class="bg-dark text-white">
+    <div class="container text-center">
+        <h1>Non Gaussian Denoising Diffusion Models</h1>
+        <p class="lead"><a href="mailto:enk100@gmail.com" target="_top">Eliya Nachmani</a>, <a
+            href="mailto:sanroman.robin@gmail.com" target="_top">Robin San-Roman</a>, <a href="mailto:liorwolf@gmail.com" target="_top">Lior Wolf</a></p>
+        <!-- <small>Tel-Aviv University and Facebook AI Research</small> -->
+      </div>
+    </header>
+
+    <br>  <br>
+
+
+    <section id="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-15 mx-auto">
+            <!--<h2>Course Details</h2>-->
+            <p class="lead" align="justify">
+                </p><p class="lead" align="justify">
+                  Generative diffusion processes are an emerging and effective tool for image and speech generation. In the existing methods, the underline noise distribution of the diffusion process is Gaussian noise. However, fitting distributions with more degrees of freedom, could help the performance of such generative models. In this work, we investigate other types of noise distribution for the diffusion process. Specifically, we show that noise from Gamma distribution provides improved results for image and speech generation. Moreover, we show that using a mixture of Gaussian noise variables in the diffusion process improves the performance over a diffusion process that is based on a single distribution. Our approach preserves the ability to efficiently sample state in the training diffusion process while using Gamma noise and a mixture of noise.
+                    </p><p class="lead" align="justify">
+              </p><p class="lead" align="justify">
+              </p><p class="lead" align="justify">
+
+
+
+
+
+    </section>
+
+
+
+
+    </p></div></div></div></section>
+
+
+
+    <section id="samples" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-13 mx-auto">
+
+
+            <p class="lead" align="justify">
+                Here are some samples from our model for you to listen:
+                </p><ul class="lead" align="justify">
+                  <li>Ground Truth - original sample from LJ dataset</li>
+                  <li>WaveGrad - sample generated with WaveGrad (noise schedule: 6 - grid search, 25 - Fibonacci,  100 and 1k - linear)</li>
+                  <li>Ours Gamma - Generated using our Gamma distribution proposed method</li>
+                  <li>Ours Mixture of Gaussian (MoG) - Generated using our 2 mixture of Gaussian proposed method</li>
+                </ul>
+            <p></p>
+
+
+              <br>  <br>
+
+
+              <center>
+              <h3>6 Iteration Samples</h3>
+              <p></p>
+              <p></p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ground Truth</th>
+                    <th>WaveGrad</th>
+                    <th>Ours - Gamma</th>
+                    <th>Ours - MoG</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+
+               <tr style="border-top:1px solid black">
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                     <source src="src/samples_6/GroundTruth/GT_16.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                   <source src="src/samples_6/Wavegrad/Baseline_16.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                   <source src="src/samples_6/Ours_Gamma/Gamma_16.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                     <source src="src/samples_6/Ours_MoG/Mix_16.wav" type="audio/wav"></audio></td>
+               </tr>
+
+               <tr style="border-top:1px solid black">
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                     <source src="src/samples_6/GroundTruth/GT_17.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                   <source src="src/samples_6/Wavegrad/Baseline_17.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                   <source src="src/samples_6/Ours_Gamma/Gamma_17.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                     <source src="src/samples_6/Ours_MoG/Mix_17.wav" type="audio/wav"></audio></td>
+               </tr>
+
+               <tr style="border-top:1px solid black">
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                     <source src="src/samples_6/GroundTruth/GT_18.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                   <source src="src/samples_6/Wavegrad/Baseline_18.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                   <source src="src/samples_6/Ours_Gamma/Gamma_18.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                     <source src="src/samples_6/Ours_MoG/Mix_18.wav" type="audio/wav"></audio></td>
+               </tr>
+
+
+               <tr style="border-top:1px solid black">
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                     <source src="src/samples_6/GroundTruth/GT_19.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                   <source src="src/samples_6/Wavegrad/Baseline_19.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                   <source src="src/samples_6/Ours_Gamma/Gamma_19.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                     <source src="src/samples_6/Ours_MoG/Mix_19.wav" type="audio/wav"></audio></td>
+               </tr>
+
+               <tr style="border-top:1px solid black">
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                     <source src="src/samples_6/GroundTruth/GT_20.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                   <source src="src/samples_6/Wavegrad/Baseline_20.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                   <source src="src/samples_6/Ours_Gamma/Gamma_20.wav" type="audio/wav"></audio></td>
+                 <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                     <source src="src/samples_6/Ours_MoG/Mix_20.wav" type="audio/wav"></audio></td>
+               </tr>
+
+
+                </tbody>
+              </table>
+              <br>  <br>
+              <br>  <br>
+              <br>  <br>
+			         </center>
+
+
+               <center>
+               <h3>25 Iteration Samples</h3>
+               <p></p>
+               <p></p>
+               <table>
+                 <thead>
+                   <tr>
+                     <th>Ground Truth</th>
+                     <th>WaveGrad</th>
+                     <th>Ours - Gamma</th>
+                     <th>Ours - MoG</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+
+                   <tr style="border-top:1px solid black">
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_25/GroundTruth/GT_06.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_25/Wavegrad/Baseline_06.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_25/Ours_Gamma/Gamma_06.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_25/Ours_MoG/Mix_06.wav" type="audio/wav"></audio></td>
+                   </tr>
+
+                   <tr style="border-top:1px solid black">
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_25/GroundTruth/GT_07.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_25/Wavegrad/Baseline_07.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_25/Ours_Gamma/Gamma_07.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_25/Ours_MoG/Mix_07.wav" type="audio/wav"></audio></td>
+                   </tr>
+
+
+                   <tr style="border-top:1px solid black">
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_25/GroundTruth/GT_08.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_25/Wavegrad/Baseline_08.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_25/Ours_Gamma/Gamma_08.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_25/Ours_MoG/Mix_08.wav" type="audio/wav"></audio></td>
+                   </tr>
+
+
+
+                   <tr style="border-top:1px solid black">
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_25/GroundTruth/GT_09.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_25/Wavegrad/Baseline_09.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_25/Ours_Gamma/Gamma_09.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_25/Ours_MoG/Mix_09.wav" type="audio/wav"></audio></td>
+                   </tr>
+
+
+                   <tr style="border-top:1px solid black">
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_25/GroundTruth/GT_10.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_25/Wavegrad/Baseline_10.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_25/Ours_Gamma/Gamma_10.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_25/Ours_MoG/Mix_10.wav" type="audio/wav"></audio></td>
+                   </tr>
+
+
+                 </tbody>
+               </table>
+               <br>  <br>
+               <br>  <br>
+               <br>  <br>
+ 			         </center>
+
+               <center>
+               <h3>100 Iteration Samples</h3>
+               <p></p>
+               <p></p>
+               <table>
+                 <thead>
+                   <tr>
+                     <th>Ground Truth</th>
+                     <th>WaveGrad</th>
+                     <th>Ours - Gamma</th>
+                     <th>Ours - MoG</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+
+                   <tr style="border-top:1px solid black">
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_100/GroundTruth/GT_01.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_100/Wavegrad/Baseline_01.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_100/Ours_Gamma/Gamma_01.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_100/Ours_MoG/Mix_01.wav" type="audio/wav"></audio></td>
+                   </tr>
+
+                   <tr style="border-top:1px solid black">
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_100/GroundTruth/GT_02.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_100/Wavegrad/Baseline_02.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_100/Ours_Gamma/Gamma_02.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_100/Ours_MoG/Mix_02.wav" type="audio/wav"></audio></td>
+                   </tr>
+
+
+                   <tr style="border-top:1px solid black">
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_100/GroundTruth/GT_03.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_100/Wavegrad/Baseline_03.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_100/Ours_Gamma/Gamma_03.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_100/Ours_MoG/Mix_03.wav" type="audio/wav"></audio></td>
+                   </tr>
+
+
+
+                   <tr style="border-top:1px solid black">
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_100/GroundTruth/GT_04.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_100/Wavegrad/Baseline_04.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_100/Ours_Gamma/Gamma_04.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_100/Ours_MoG/Mix_04.wav" type="audio/wav"></audio></td>
+                   </tr>
+
+
+                   <tr style="border-top:1px solid black">
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_100/GroundTruth/GT_05.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_100/Wavegrad/Baseline_05.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                       <source src="src/samples_100/Ours_Gamma/Gamma_05.wav" type="audio/wav"></audio></td>
+                     <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                         <source src="src/samples_100/Ours_MoG/Mix_05.wav" type="audio/wav"></audio></td>
+                   </tr>
+
+
+                 </tbody>
+               </table>
+               <br>  <br>
+               <br>  <br>
+               <br>  <br>
+ 			         </center>
+
+
+               <center>
+               <h3>1000 Iteration Samples</h3>
+               <p></p>
+               <p></p>
+               <table>
+                 <thead>
+                   <tr>
+                     <th>Ground Truth</th>
+                     <th>WaveGrad</th>
+                     <th>Ours - Gamma</th>
+                     <th>Ours - MoG</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+
+
+                <tr style="border-top:1px solid black">
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/samples_1000/GroundTruth/GT_11.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                    <source src="src/samples_1000/Wavegrad/Baseline_11.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                    <source src="src/samples_1000/Ours_Gamma/Gamma_11.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/samples_1000/Ours_MoG/Mix_11.wav" type="audio/wav"></audio></td>
+                </tr>
+
+                <tr style="border-top:1px solid black">
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/samples_1000/GroundTruth/GT_12.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                    <source src="src/samples_1000/Wavegrad/Baseline_12.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                    <source src="src/samples_1000/Ours_Gamma/Gamma_12.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/samples_1000/Ours_MoG/Mix_12.wav" type="audio/wav"></audio></td>
+                </tr>
+
+                <tr style="border-top:1px solid black">
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/samples_1000/GroundTruth/GT_13.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                    <source src="src/samples_1000/Wavegrad/Baseline_13.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                    <source src="src/samples_1000/Ours_Gamma/Gamma_13.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/samples_1000/Ours_MoG/Mix_13.wav" type="audio/wav"></audio></td>
+                </tr>
+
+
+                <tr style="border-top:1px solid black">
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/samples_1000/GroundTruth/GT_14.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                    <source src="src/samples_1000/Wavegrad/Baseline_14.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                    <source src="src/samples_1000/Ours_Gamma/Gamma_14.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/samples_1000/Ours_MoG/Mix_14.wav" type="audio/wav"></audio></td>
+                </tr>
+
+                <tr style="border-top:1px solid black">
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/samples_1000/GroundTruth/GT_15.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                    <source src="src/samples_1000/Wavegrad/Baseline_15.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                    <source src="src/samples_1000/Ours_Gamma/Gamma_15.wav" type="audio/wav"></audio></td>
+                  <td><audio controls="" class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/samples_1000/Ours_MoG/Mix_15.wav" type="audio/wav"></audio></td>
+                </tr>
+
+                 </tbody>
+               </table>
+               <br>  <br>
+               <br>  <br>
+               <br>  <br>
+ 			         </center>
+
+
+
+          </center></center></center></div>
+
+
+
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <!-- <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p> -->
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="./page_files/jquery.min.js"></script>
+    <script src="./page_files/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="./page_files/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="./page_files/scrolling-nav.js"></script>
+
+
+
+</body></html>
